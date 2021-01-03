@@ -1,9 +1,9 @@
-import Page from './Page.js'
+import Deck from './Deck.js'
 
 function App() {
     return (
 	    <div className="App">
-	    <Page />
+	    <Deck />
 	    </div>
     );
 }

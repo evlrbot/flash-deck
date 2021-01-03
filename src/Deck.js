@@ -4,7 +4,7 @@ import Card from './Card.js';
 import stackedCards from './StackedCards.js';
 import http from 'http';
 
-class Page extends React.PureComponent {
+class Deck extends React.PureComponent {
 
     constructor(props) {
 	super(props);
@@ -65,4 +65,4 @@ class Page extends React.PureComponent {
     }
 }
 
-export default Page
+export default Deck
