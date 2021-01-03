@@ -2,11 +2,43 @@ import React from 'react';
 import './styles.css';
 import Card from './Card.js';
 import StackedCards from './StackedCards.js';
+import http from 'http';
 
 class Page extends React.PureComponent {
 
+    constructor(props) {
+	super(props);
+	
+	this.state = {
+	    data: []
+	};
+    }
+    
+    async data() {
+	return new Promise((resolve, reject) => {
+	    http.get('http://localhost/cards', (res) => {
+		let data = '';
+		res.on('data', (d) =>{
+		    data += d;
+		});
+
+		res.on('end',() => {
+		    //console.log(data);
+		    return resolve(JSON.parse(data));		    
+		});		
+	    });
+	});
+    }
+
     componentDidMount() {
-	StackedCards();
+	this.data()
+	    .then((d) => {
+		console.log(d)
+		this.setState({data : d});
+	    })
+	    .then(() => {
+		StackedCards();
+	    });
     }
 
     componentWillUnmount() {}
@@ -16,7 +48,7 @@ class Page extends React.PureComponent {
 	    <div id="body">
 		<div id="stacked-cards-block" className="stackedcards stackedcards--animatable init">
 		    <div className="stackedcards-container">
-			{this.props.cards.map((value, index) =>{
+			{this.state.data.map((value, index) =>{
 			    return <Card key={index} frontTxt={`${index}`} backTxt={`${value}`}/>
 			})}
 		    </div>
