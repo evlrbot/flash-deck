@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import Card from './Card.js';
+//import StackedCards from './StackedCards.js';
 
 class Page extends React.PureComponent {
     constructor(props) {
@@ -12,7 +13,9 @@ class Page extends React.PureComponent {
 	this.onMouseMove = this.onMouseMove.bind(this);
     }
 
-    componentDidMount(){}
+    componentDidMount(){
+	//StackedCards();
+    }
 
     componentWillUnmount(){}
 
@@ -31,8 +34,23 @@ class Page extends React.PureComponent {
 		    X:{this.state.x}<br/>
 		    Y:{this.state.y}
 		</div>
-
-		<Card />
+		
+		<div id="stacked-cards-block">
+		    <div className="stackedcards-container">
+			<Card />
+			<Card />
+			<Card />
+			<Card />
+		    </div>
+		    <div className="stackedcards--animatable stackedcards-overlay top">TOP</div>
+		    <div className="stackedcards--animatable stackedcards-overlay right">RIGHT</div>
+		    <div className="stackedcards--animatable stackedcards-overlay left">LEFT</div>
+		</div>
+		<div className="global-actions">
+		    <div className="left-action">Left</div>
+		    <div className="top-action">Top</div>
+		    <div className="right-action">Right</div>
+		</div>  
 	    </div>
 	);
     }

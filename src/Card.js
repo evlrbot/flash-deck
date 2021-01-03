@@ -3,21 +3,31 @@ import React from 'react';
 class Card extends React.PureComponent {
     constructor(props) {
 	super(props);
-	this.handleFlip = this.handleFlip.bind(this);
-    }
+	this.handleClick = this.handleClick.bind(this);
+	this.state = {
+	    flipped: false
+	};
+    }    
 
-    handleFlip() {
-	//alert("flip");
+    handleClick() {
+	console.log('click');
+	this.setState(function(state, props){
+	    return {
+		flipped: state.flipped ? false : true
+	    }
+	});
     }
-
+    
     render() {
 	return(
-	    <div id="card" onClick={this.handleFlip}>
-		<div id="card-inner">
-		    <div id="card-front">
+	    <div className={`card ${this.state.flipped ? 'card flipped' : 'card'}`}
+		 onClick={this.handleClick}
+		 >
+		<div className="card-inner">
+		    <div className="card-front">
 			<p>Flash Deck</p>
 		    </div>
-		    <div id="card-back">
+		    <div className="card-back">
 			<p>back back back back back back back back back back</p>
 		    </div>
 		</div>
