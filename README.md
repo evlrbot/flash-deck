@@ -1,5 +1,15 @@
-# Getting Started with Create React App
+# Flash Deck
 
+Displays a deck of flash cards that you can flip and swipe.
+
+## To Do
+
+* Multiple deck selection
+* Mouse draggable swipes
+* User Account
+* Search Decks
+
+## React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

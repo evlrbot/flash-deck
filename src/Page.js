@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 import Card from './Card.js';
-import StackedCards from './StackedCards.js';
+import stackedCards from './StackedCards.js';
 import http from 'http';
 
 class Page extends React.PureComponent {
@@ -18,14 +18,13 @@ class Page extends React.PureComponent {
 	return new Promise((resolve, reject) => {
 	    http.get('http://localhost/cards', (res) => {
 		let data = '';
-		res.on('data', (d) =>{
-		    data += d;
+		res.on('data', chunk => {
+		    data += chunk;
 		});
-
 		res.on('end',() => {
-		    //console.log(data);
 		    return resolve(JSON.parse(data));		    
-		});		
+		});
+		res.on('error', () => console.log );
 	    });
 	});
     }
@@ -37,7 +36,7 @@ class Page extends React.PureComponent {
 		this.setState({data : d});
 	    })
 	    .then(() => {
-		StackedCards();
+		stackedCards();
 	    });
     }
 
