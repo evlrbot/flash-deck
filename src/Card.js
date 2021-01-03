@@ -20,7 +20,7 @@ class Card extends React.PureComponent {
     
     render() {
 	return(
-	    <div className={`card ${this.state.flipped ? 'card flipped' : 'card'}`}
+	    <div className={`card ${this.state.flipped ? 'flipped' : ''}`}
 		 onClick={this.handleClick}
 		 >
 		<div className="card-inner">

@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 import Card from './Card.js';
-//import StackedCards from './StackedCards.js';
+import StackedCards from './StackedCards.js';
 
 class Page extends React.PureComponent {
     constructor(props) {
@@ -14,7 +14,7 @@ class Page extends React.PureComponent {
     }
 
     componentDidMount(){
-	//StackedCards();
+	StackedCards();
     }
 
     componentWillUnmount(){}
@@ -30,14 +30,8 @@ class Page extends React.PureComponent {
     render() {
 	return (
 	    <div id="body" onMouseMove={this.onMouseMove}>
-		<div className="mouse_position">
-		    X:{this.state.x}<br/>
-		    Y:{this.state.y}
-		</div>
-		
-		<div id="stacked-cards-block">
+		<div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
 		    <div className="stackedcards-container">
-			<Card />
 			<Card />
 			<Card />
 			<Card />
