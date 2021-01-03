@@ -30,7 +30,7 @@ class Page extends React.PureComponent {
     render() {
 	return (
 	    <div id="body" onMouseMove={this.onMouseMove}>
-		<div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
+		<div id="stacked-cards-block" className="stackedcards stackedcards--animatable init">
 		    <div className="stackedcards-container">
 			<Card />
 			<Card />

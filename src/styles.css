@@ -8,7 +8,7 @@ body { margin:0px; padding:0px; background-color:#111111;}
     color:black;
     width:350px !important;
     height:500px !important;
-    border:1px solid green;
+    border:0px solid green;
     border-radius:25px;
     padding:0px;
     text-align:center;
@@ -79,7 +79,7 @@ body { margin:0px; padding:0px; background-color:#111111;}
 
 #stacked-cards-block {
     border:1px solid red;
-    width:350px;
+    width:500px;
     margin:100px auto;
     padding:10px; 
 }
@@ -104,16 +104,16 @@ body { margin:0px; padding:0px; background-color:#111111;}
 
 .stackedcards * {
     -webkit-user-select: none;
-            -moz-user-select: none;
-             -ms-user-select: none;
-         user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
 .stackedcards--animatable {
     -webkit-transition: all 400ms ease;
-            -o-transition: all 400ms ease;
-            transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
 }
 
 .stackedcards .stackedcards-container > *,
@@ -134,14 +134,14 @@ body { margin:0px; padding:0px; background-color:#111111;}
     width: 100%;
     height: 100%;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .stackedcards-overlay.left,
@@ -230,11 +230,11 @@ body { margin:0px; padding:0px; background-color:#111111;}
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     text-transform: uppercase;
     font-weight: 500;
     color: #fff;

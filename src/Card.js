@@ -9,8 +9,10 @@ class Card extends React.PureComponent {
 	};
     }    
 
-    handleClick() {
-	console.log('click');
+    handleClick(e) {
+	
+	//console.log('click',e);
+	//e.preventDefault();
 	this.setState(function(state, props){
 	    return {
 		flipped: state.flipped ? false : true
