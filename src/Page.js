@@ -8,16 +8,17 @@ class Page extends React.PureComponent {
 	super(props);
 	this.state = {
 	    x : null,    // mouse x
-	    y : null     // mouse y
+	    y : null,     // mouse y
+	    cards : ['foo','man','chu']
 	}
 	this.onMouseMove = this.onMouseMove.bind(this);
     }
 
-    componentDidMount(){
+    componentDidMount() {
 	StackedCards();
     }
 
-    componentWillUnmount(){}
+    componentWillUnmount() {}
 
     // handle the onMouseMove event in the component
     onMouseMove(e) {
@@ -32,9 +33,9 @@ class Page extends React.PureComponent {
 	    <div id="body" onMouseMove={this.onMouseMove}>
 		<div id="stacked-cards-block" className="stackedcards stackedcards--animatable init">
 		    <div className="stackedcards-container">
-			<Card />
-			<Card />
-			<Card />
+			{this.state.cards.map((value, index) =>{
+			    return <Card key={index} frontTxt={`${index}`} backTxt={`${value}`}/>
+			})}
 		    </div>
 		    <div className="stackedcards--animatable stackedcards-overlay top">TOP</div>
 		    <div className="stackedcards--animatable stackedcards-overlay right">RIGHT</div>

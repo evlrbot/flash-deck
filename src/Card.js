@@ -4,33 +4,24 @@ class Card extends React.PureComponent {
     constructor(props) {
 	super(props);
 	this.handleClick = this.handleClick.bind(this);
-	this.state = {
-	    flipped: false
-	};
     }    
 
     handleClick(e) {
-	
-	//console.log('click',e);
-	//e.preventDefault();
-	this.setState(function(state, props){
-	    return {
-		flipped: state.flipped ? false : true
-	    }
-	});
+	var classList = e.currentTarget.classList;
+	classList.contains('flipped') ? classList.remove('flipped') : classList.add('flipped')
     }
     
     render() {
 	return(
-	    <div className={`card ${this.state.flipped ? 'flipped' : ''}`}
+	    <div className='card'
 		 onClick={this.handleClick}
 		 >
 		<div className="card-inner">
 		    <div className="card-front">
-			<p>Flash Deck</p>
+			<p>{this.props.frontTxt}</p>
 		    </div>
 		    <div className="card-back">
-			<p>back back back back back back back back back back</p>
+			<p>{this.props.backTxt}</p>
 		    </div>
 		</div>
 	    </div>
